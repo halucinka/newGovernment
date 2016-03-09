@@ -5,6 +5,7 @@ import Firebase from 'firebase'
 import bodyParser from 'body-parser'
 import {getClientIp} from './helpers'
 import maxmind from 'maxmind'
+import credentials from './credentials'
 
 const app = express()
 const server = Server(app)
@@ -115,10 +116,8 @@ app.get('/statistics', (req, res) => {
     })
 })
 
-firebase.authWithPassword({
-  email: 'government@gugugu.com',
-  password: 'FicoJeKusBlbca'
-}, function(error, authData) {
+
+firebase.authWithPassword(credentials, function(error, authData) {
   if (error) {
     console.log('Login Failed!', error)
   } else {

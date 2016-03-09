@@ -1,12 +1,10 @@
 import Firebase from 'firebase'
+import credentials from './credentials'
 
 const url = 'https://governmentsk.firebaseio.com/'
 const firebase = new Firebase(url)
 
-firebase.authWithPassword({
-  email: 'government@gugugu.com',
-  password: 'FicoJeKusBlbca'
-}, function(error, authData) {
+firebase.authWithPassword(credentials, function(error, authData) {
   if (error) {
     console.log('Login Failed!', error)
   } else {

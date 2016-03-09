@@ -12,7 +12,7 @@
   "dependencies": {
     "babel": "~6.2.0",
     "babel-core": "~6.2.0",
-    "babel-eslint": "^5.0.0-beta6",
+    "babel-eslint": "^5.0.0",
     "babel-loader": "~6.2.1",
     "babel-plugin-add-module-exports": "^0.1.2",
     "babel-plugin-extensible-destructuring": "^2.0.0",
@@ -31,6 +31,7 @@
     "chartist": "^0.9.6",
     "css-loader": "^0.23.1",
     "d3": "^3.5.16",
+    "eslint": "^2.3.0",
     "eslint-plugin-import": "^0.13.0",
     "eslint-plugin-react": "^3.16.1",
     "express": "^4.11.2",
