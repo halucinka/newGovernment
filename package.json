@@ -45,7 +45,7 @@
     "gulp-eslint": "^1.0.0",
     "gulp-shell": "^0.4.3",
     "gulp-util": "^3.0.2",
-    "history": "~1.17.0",
+    "history": "^1.17.0",
     "html-escape": "^1.0.0",
     "intl": "^1.0.1",
     "lodash": "^4.5.1",
