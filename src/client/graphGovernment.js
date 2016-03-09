@@ -42,13 +42,13 @@ export default class GraphGovernment extends React.Component {
         }
       }
     }
-    console.log('pretavene cislo na strany', s, ' ', number)
+    //console.log('pretavene cislo na strany', s, ' ', number)
     return s
   }
 
 
   render() {
-    console.log(this.props.state.statistics)
+    //console.log(this.props.state.statistics)
     let data = []
     let dataParties = []
     let i = 0
@@ -56,7 +56,7 @@ export default class GraphGovernment extends React.Component {
     for (let id in this.props.state.statistics) {
       let s = this.numberToString(id)
       dataParties[i] = {name: s, votes: Number(this.props.state.statistics[id].votes)}
-      console.log(dataParties[i].votes)
+      //console.log(dataParties[i].votes)
       if (this.props.state.statistics[id].votes > 0) {
         data[i] = [s, 100 * this.props.state.statistics[id].votes / numbOfUsers]
       } else {
@@ -64,13 +64,13 @@ export default class GraphGovernment extends React.Component {
       }
       i += 1
     }
-    console.log(data)
+    //console.log(data)
 
-    let color = ['', 'info']
+    let color = ['default', 'info']
     let res = []
     for (let i = 0; i < data.length; i++) {
       res.push(<div>{data[i][0]}</div>)
-      res.push(<ProgressBar bsStyle ={color[i % 2]} now={data[i][1]} label="%(percent)s%" />)
+      res.push(<ProgressBar key={`${i}`} bsStyle ={color[i % 2]} now={data[i][1]} label="%(percent)s%" />)
     }
 
     return(

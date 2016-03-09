@@ -32,7 +32,7 @@ export default class Hello extends React.Component {
       status: 'home',
       disabled: true,
       statistics: {},
-      votedParties: {},
+      votedParties: [],
       ip: null,
       ipsArray: null,
       loc: null,

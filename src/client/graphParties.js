@@ -18,7 +18,7 @@ export default class GraphParties extends React.Component {
 
   render() {
     let numbOfUsers = this.getNumbOfUsers()
-    console.log(this.props.state.statistics)
+    //console.log(this.props.state.statistics)
     let data = []
     let dataParties = {}
     for (let id in this.props.state.parties) {
@@ -29,7 +29,7 @@ export default class GraphParties extends React.Component {
         dataParties[id].votes += 1
       }
     }
-    console.log(dataParties)
+    //console.log(dataParties)
     let i = 0
     for (let id in dataParties) {
       if (100 * dataParties[id].votes / numbOfUsers > 1) {

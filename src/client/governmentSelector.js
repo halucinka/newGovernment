@@ -77,7 +77,7 @@ export default class GovernmentSelector extends React.Component {
       }
     }
     selected = selected2
-    console.log('vypisujem selected v handleChange', selected)
+    //console.log('vypisujem selected v handleChange', selected)
     let result = []
     result[0] = selected2
     result[1] = sum
@@ -85,7 +85,7 @@ export default class GovernmentSelector extends React.Component {
   }
 
   render() {
-    console.log(this.props.state.parties)
+    //console.log(this.props.state.parties)
     if (this.isEmpty(this.props.state.parties)) {
       return (<div> <h3><center>Loading...</center></h3></div>)
     } else {
