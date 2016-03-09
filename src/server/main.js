@@ -10,7 +10,7 @@ import credentials from './credentials'
 const app = express()
 const server = Server(app)
 
-const port = 8002
+const port = 8011
 const url = 'https://governmentsk.firebaseio.com/'
 const firebase = new Firebase(url)
 
