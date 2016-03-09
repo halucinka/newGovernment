@@ -99,7 +99,8 @@ module.exports = function(isDevelopment) {
     } : {
       path: constants.BUILD_DIR,
       filename: '[name].js',
-      chunkFilename: '[name]-[chunkhash].js'
+      chunkFilename: '[name]-[chunkhash].js',
+      publicPath: '/build/'
     },
     plugins: (function() {
       var plugins = [
