@@ -1,0 +1,8 @@
+{
+  "rules": {
+    "no-var": 0
+  },
+  "env": {
+    "node": true
+  }
+}
