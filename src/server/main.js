@@ -48,6 +48,7 @@ server.listen(port, '127.0.0.1', () => {
 
 app.use(bodyParser.json())
 
+app.use('/build', express.static('build'))
 
 app.post('/results', (req, res) => {
   let id = firebase.push().key()
