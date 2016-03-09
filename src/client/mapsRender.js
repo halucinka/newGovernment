@@ -83,12 +83,12 @@ export default class MapsRender extends React.Component {
 
   componentDidMount() {
     let ac = averageCountry
-    console.log('ac', ac)
+    //console.log('ac', ac)
     let markers = {}
     for (let i = 0; i < ac.length; i++) {
       let name = ac[i].name
       markers[name] = {name: ac[i].name, lat: ac[i].lat, long: ac[i].long, value: 0}
-      console.log(markers[name])
+      //console.log(markers[name])
        // value = number of people who voted
     }
 
@@ -97,13 +97,13 @@ export default class MapsRender extends React.Component {
         if(this.props.state.loc[id].countryCode !== null) {
           //if (this.props.state.loc[id].countryName !== 'Slovakia') {
           let name = this.props.state.loc[id].countryCode
-          console.log(name)
+          //console.log(name)
           markers[name].value += 1
           //}
         }
       }
     }
-    console.log(markers)
+    //console.log(markers)
 
 
 
