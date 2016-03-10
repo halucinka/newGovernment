@@ -1,5 +1,6 @@
 import React from 'react'
 import {Nav, NavItem, Navbar} from 'react-bootstrap'
+import {getIps} from './hello'
 
 export class NavBar extends React.Component {
 
@@ -20,11 +21,16 @@ export class NavBar extends React.Component {
             <NavItem
               eventKey={1}
               onClick = {(e) => {
-                this.props.dispatch((state) => {
-                  return {...state,
-                           status: 'dotaznik'}
-                })
-              }}
+                getIps()
+                .then((a) => {
+                  //console.log('aaaaa', a)
+                  this.props.dispatch((state) => {
+                    return {...state,
+                             status: 'dotaznik',
+                            ipsArray: a}
+                  })
+              })
+            }}
             >Dotazník</NavItem>
             <NavItem
               eventKey = {2}

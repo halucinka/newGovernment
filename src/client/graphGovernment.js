@@ -11,10 +11,11 @@ export default class GraphGovernment extends React.Component {
     for (let id in this.props.state.statistics) {
       if (this.props.state.statistics[id] !== null) {
         {
-          numbOfUsers += 1
+          numbOfUsers += this.props.state.statistics[id].votes
         }
       }
     }
+    //console.log(this.props.state.statistics)
     return numbOfUsers
   }
 
@@ -59,6 +60,7 @@ export default class GraphGovernment extends React.Component {
       //console.log(dataParties[i].votes)
       i += 1
     }
+    //console.log(dataParties)
     dataParties = lodash.sortBy(dataParties, (obj) => -obj.votes)
     //console.log(data)
     let data = []

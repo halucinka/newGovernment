@@ -17,6 +17,13 @@ const url = 'https://governmentsk.firebaseio.com/'
 
 const firebase = new Firebase(url)
 
+export function getIps() {
+  return performRequest('get', '/ips')
+  .then((ipsArray) => {
+    return JSON.parse(ipsArray)
+  })
+}
+
 export default class Hello extends React.Component {
 
   componentWillMount() {
@@ -46,7 +53,7 @@ export default class Hello extends React.Component {
 
     read(firebase.child('parties'))
     .then((parties) => {
-      this.getIps()
+      getIps()
       .then((ipsArray) => {
         this.getIp()
         .then((ip) => {
@@ -77,16 +84,16 @@ export default class Hello extends React.Component {
         s = s + '0'
       }
     }
-    console.log(array)
-    console.log(s)
+    //console.log(array)
+    //console.log(s)
     return s
   }
 
   postResults() {
-    console.log(this.globalState.votedParties)
+    //console.log(this.globalState.votedParties)
     let array = this.fromIdsToArray(this.globalState.votedParties)
     let s = this.fromArrayToString(array)
-    console.log(array)
+    //console.log(array)
     performRequest('post', '/results', {
       'parties': this.globalState.votedParties,
       'array': array,
@@ -108,12 +115,7 @@ export default class Hello extends React.Component {
     })
   }
 
-  getIps() {
-    return performRequest('get', '/ips')
-    .then((ipsArray) => {
-      return JSON.parse(ipsArray)
-    })
-  }
+
 
 
   getStatistics() {
