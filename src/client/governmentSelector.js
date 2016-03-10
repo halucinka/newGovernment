@@ -214,7 +214,7 @@ export default class GovernmentSelector extends React.Component {
       <h4>
       <br/>
       <center>
-        Zvoľte strany, ktoré majú v súčte viac ako polovicu kresiel v parlamente, tzn. viac ako 76.
+        Zvoľte strany, ktoré majú v súčte viac ako polovicu kresiel v parlamente, tzn. viac ako 75.
       </center>
       </h4>
         <Grid>
