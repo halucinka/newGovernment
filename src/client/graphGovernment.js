@@ -1,6 +1,6 @@
 import React from 'react'
 import {ProgressBar, Row, Col} from 'react-bootstrap'
-//import lodash from 'lodash'
+import lodash from 'lodash'
 //import d3 from 'd3'
 
 
@@ -49,7 +49,7 @@ export default class GraphGovernment extends React.Component {
 
   render() {
     //console.log(this.props.state.statistics)
-    let data = []
+
     let dataParties = []
     let i = 0
     let numbOfUsers = this.getNumbOfUsers()
@@ -57,14 +57,20 @@ export default class GraphGovernment extends React.Component {
       let s = this.numberToString(id)
       dataParties[i] = {name: s, votes: Number(this.props.state.statistics[id].votes)}
       //console.log(dataParties[i].votes)
-      if (this.props.state.statistics[id].votes > 0) {
-        data[i] = [s, 100 * this.props.state.statistics[id].votes / numbOfUsers]
+      i += 1
+    }
+    dataParties = lodash.sortBy(dataParties, (obj) => -obj.votes)
+    //console.log(data)
+    let data = []
+    i = 0
+    for (let id in dataParties) {
+      if (dataParties[id].votes > 0) {
+        data[i] = [dataParties[id].name, 100 * dataParties[id].votes / numbOfUsers]
       } else {
         data[i] = [s, 0]
       }
       i += 1
     }
-    //console.log(data)
 
     let color = ['default', 'info']
     let res = []

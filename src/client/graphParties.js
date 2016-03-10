@@ -1,6 +1,6 @@
 import React from 'react'
 import {ProgressBar, Row, Col} from 'react-bootstrap'
-
+import lodash from 'lodash'
 
 export default class GraphParties extends React.Component {
 
@@ -30,6 +30,7 @@ export default class GraphParties extends React.Component {
       }
     }
     //console.log(dataParties)
+    dataParties = lodash.sortBy(dataParties, (obj) => -obj.votes)
     let i = 0
     for (let id in dataParties) {
       if (100 * dataParties[id].votes / numbOfUsers > 1) {
@@ -39,6 +40,7 @@ export default class GraphParties extends React.Component {
       }
       i += 1
     }
+
     let color = ['warning', 'success']
     let res = []
     for (let i = 0; i < data.length; i++) {
