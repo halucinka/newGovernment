@@ -9,10 +9,12 @@ export default class GraphParties extends React.Component {
     for (let id in this.props.state.statistics) {
       if (this.props.state.statistics[id] !== null) {
         {
-          numbOfUsers += 1
+          numbOfUsers += this.props.state.statistics[id].votes
+          //console.log(this.props.state.statistics[id].votes)
         }
       }
     }
+    //console.log(this.props.state.statistics)
     return numbOfUsers
   }
 
@@ -25,8 +27,9 @@ export default class GraphParties extends React.Component {
       dataParties[id] = {name: this.props.state.parties[id].name, number: this.props.state.parties[id].number, votes: 0}
     }
     for (let number in this.props.state.statistics) {
+      //console.log(number)
       for (let id of this.props.state.statistics[number].parties) {
-        dataParties[id].votes += 1
+        dataParties[id].votes += this.props.state.statistics[number].votes
       }
     }
     //console.log(dataParties)
