@@ -12,6 +12,7 @@ export default class GraphGovernment extends React.Component {
       if (this.props.state.statistics[id] !== null) {
         {
           numbOfUsers += this.props.state.statistics[id].votes
+          //console.log(this.props.state.statistics[id].votes)
         }
       }
     }

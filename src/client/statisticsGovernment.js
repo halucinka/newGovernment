@@ -13,19 +13,19 @@ export class StatisticsGovernment extends React.Component {
     return true
   }
 
-
   getNumbOfUsers() { // prepared for selection of some country
     let numbOfUsers = 0
     for (let id in this.props.state.statistics) {
       if (this.props.state.statistics[id] !== null) {
         {
-          numbOfUsers += 1
+          numbOfUsers += this.props.state.statistics[id].votes
+          //console.log(this.props.state.statistics[id].votes)
         }
       }
     }
+    //console.log(this.props.state.statistics)
     return numbOfUsers
   }
-
 
 
   render() {

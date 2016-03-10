@@ -19,10 +19,12 @@ export class StatisticsParties extends React.Component {
     for (let id in this.props.state.statistics) {
       if (this.props.state.statistics[id] !== null) {
         {
-          numbOfUsers += 1
+          numbOfUsers += this.props.state.statistics[id].votes
+          //console.log(this.props.state.statistics[id].votes)
         }
       }
     }
+    //console.log(this.props.state.statistics)
     return numbOfUsers
   }
 
